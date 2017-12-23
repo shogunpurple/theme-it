@@ -1,0 +1,25 @@
+{
+  "name": "theme-it",
+  "version": "1.0.0",
+  "main": "lib/theme-it.js",
+  "repository": "git@github.com:mmckeaveney/theme-it.git",
+  "author": "Martin McKeaveney <martinmckeaveney@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build:minified": "parcel build src/theme-it",
+    "clean": "rimraf dist && rimraf lib",
+    "dev": "parcel DEV_ONLY/index.html",
+    "prepublish": "if in-publish; then npm run prepublish:compile; fi",
+    "prepublish:compile": "npm run clean && npm run transpile && npm run build:minified",
+    "test": "jest --ci --colors --verbose -c=jest.config.json -b",
+    "test:watch": "jest --colors --ci --verbose --watch -b -c=jest.config.json",
+    "transpile": "babel src --out-dir lib --copy-files"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "in-publish": "^2.0.0",
+    "jest": "^22.0.4",
+    "parcel-bundler": "^1.3.0"
+  }
+}

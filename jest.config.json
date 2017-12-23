@@ -1,0 +1,6 @@
+{
+  "modulePaths": ["src"],
+  "transformIgnorePatterns": [],
+  "verbose": true,
+  "testMatch": ["**/__tests__/**/*.spec.js"]
+}
