@@ -1,19 +1,17 @@
+function renderNavItems(element, index, arr) {
+  const li = document.createElement("li");
 
-    const ul = document.createElement('ul');
+  ul.appendChild(li);
 
-    const navItems = ['Home','link one','link two','link three'];
-    
-    document.querySelector('.navbar').appendChild(ul);
-    navItems.forEach(renderNavItems);
+  const text = document.createTextNode(element);
 
-    var text;
-    function renderNavItems(element, index, arr) {
-        var li = document.createElement('li');
-        
-        ul.appendChild(li);
-        
-        text = document.createTextNode(element);
-        
-        li.innerHTML=li.innerHTML + element;
-    }
+  li.innerHTML = li.innerHTML + element;
+}
+
+const ul = document.createElement("ul");
+document.querySelector(".navbar").appendChild(ul);
+
+const navItems = ["Home", "link one", "link two", "link three"];
+
+navItems.forEach(renderNavItems);
 
