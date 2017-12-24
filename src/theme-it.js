@@ -24,7 +24,7 @@ const getThemeProperty = (property, element = document.body) => {
 /**
  * Sets the value of a custom CSS property on the specified DOM Node.
  * @param {String} property - The name of the property to set. This is auto-prefixed with --
- * @param {String | Number | () => Number | () => String} value - The value of the property
+ * @param {String | Number} value - The value of the property
  * @param {DOMNode} element - element to set the property on.
  */
 const setThemeProperty = (property, value, element = document.body) => {
@@ -34,7 +34,7 @@ const setThemeProperty = (property, value, element = document.body) => {
 /**
  * Remove a custom CSS property from the DOM Node.
  * @param {String} property - The name of the property to remove. This is auto-prefixed with --
- * @param {*} element - The element to remove the property from.
+ * @param {DOMNode} element - The element to remove the property from.
  */
 const removeThemeProperty = (property, element = document.body) => {
   const removed = element.style.removeProperty(`--${property}`);

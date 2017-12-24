@@ -21,7 +21,9 @@ describe("Themeit API tests", () => {
     expect(actual).toEqual("");
   });
 
-  it("Should return the correct CSS custom property on an element using getThemeProperty when it exists", () => {
+  // CSS Variables are not yet supported by JSDOM - https://github.com/tmpvar/jsdom/issues/1895
+  // Skipping these tests until the issue is resolved.
+  it.skip("Should return the correct CSS custom property on an element using getThemeProperty when it exists", () => {
     containerNode.style.setProperty(testVariable, "red");
 
     const actual = themeit.getThemeProperty(testProperty, containerNode);
@@ -29,7 +31,7 @@ describe("Themeit API tests", () => {
     expect(actual).toEqual("red");
   });
 
-  it("Should set a CSS Custom property on an element using setThemeProperty", () => {
+  it.skip("Should set a CSS Custom property on an element using setThemeProperty", () => {
     themeit.setThemeProperty(testProperty, "red");
 
     const actual = getComputedStyle(containerNode).getPropertyValue(testVariable);
@@ -37,7 +39,7 @@ describe("Themeit API tests", () => {
     expect(actual).toEqual("red");
   });
 
-  it("Should remove a CSS Custom property from an element using removeThemeProperty", () => {
+  it.skip("Should remove a CSS Custom property from an element using removeThemeProperty", () => {
     containerNode.style.setProperty(testVariable, "red");
 
     const removed = themeit.removeThemeProperty(testProperty, containerNode);
