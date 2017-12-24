@@ -1,0 +1,83 @@
+:root {
+  --navbar-bg-color: blue;
+  --navbar-a-color: white;
+  --navbar-a-hover-color: lightblue;
+  --navbar-font-family: "Goudy Bookletter 1911", sans-serif;
+
+  --main-content-bg-color: lightgrey;
+  --main-content-color: black;
+  --main-content-p-font: "Goudy Bookletter 1911", sans-serif;
+  --main-content-margin: 100px;
+  --main-content-text-layout: justify;
+
+  --grid-area-title-color: red;
+  --grid-section-p-color: grey;
+  --grid-section-bg-color: white;
+}
+
+.navbar {
+    background-color: var(--navbar-bg-color);
+    height: 60px;
+    margin-bottom: 0px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    padding: 20px;
+    color: var(--navbar-a-color);
+    text-decoration: none;
+    font-family: var(--navbar-font-family);
+}
+
+.navbar li a:hover {
+    color: var(--navbar-a-hover-color);
+}
+
+.main-content-area {
+    background-color: var(--main-content-bg-color);
+    text-align: center;
+}
+
+.main-content-area h1 {
+    color: var(--main-content-color);
+    padding-top: 30px;
+}
+
+.main-content-area p {
+    font-family: var(--main-content-p-font);
+    color: var(--main-content-color);
+    padding-bottom: 20px;
+    margin-left: var(--main-content-margin);
+    margin-right: var(--main-content-margin);
+    text-align: var(--main-content-text-layout);
+}
+
+.grid-area h2 {
+    color: var(--grid-area-title-color);
+    text-align: left;
+}
+
+.grid-section {
+    display: inline-flex;
+    background-color: var(--grid-section-bg-color);
+}
+
+.grid-section p {
+ color: var(--grid-section-p-color);
+}
+
+.grid-unit {
+    text-align: center;
+}
+
