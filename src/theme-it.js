@@ -7,6 +7,18 @@ const validateResponse = (response, property) => {
 };
 
 /**
+ * Checks whether or not the users browser supports custom CSS properties.
+ */
+const themingSupported = () => {
+    const isSupported = CSS.supports("--custom-properties", "custom");
+    if (!isSupported) {
+        console.warn("Your browser does not support custom CSS properties.");
+    }
+    return isSupported;
+}
+
+
+/**
  * Gets the value of a CSS custom property from the specified element.
  * @param {String} property - The property to get. Auto prefixed with --.
  * @param {DOMNode} element - DOM node to get CSS custom property from.
@@ -14,12 +26,13 @@ const validateResponse = (response, property) => {
 const getThemeProperty = (property, element = document.body) => {
   const customPropertyValue = getComputedStyle(element).getPropertyValue(
     `--${property}`
-  );
+  ).trim();
 
   validateResponse(customPropertyValue, property);
 
   return customPropertyValue;
 };
+
 
 /**
  * Sets the value of a custom CSS property on the specified DOM Node.
@@ -31,6 +44,7 @@ const setThemeProperty = (property, value, element = document.body) => {
   element.style.setProperty(`--${property}`, value);
 };
 
+
 /**
  * Remove a custom CSS property from the DOM Node.
  * @param {String} property - The name of the property to remove. This is auto-prefixed with --
@@ -41,9 +55,10 @@ const removeThemeProperty = (property, element = document.body) => {
   validateResponse(removed, property);
 };
 
-export { getThemeProperty, setThemeProperty, removeThemeProperty };
+export { themingSupported, getThemeProperty, setThemeProperty, removeThemeProperty };
 
 export default {
+  themingSupported, 
   getThemeProperty,
   setThemeProperty,
   removeThemeProperty
