@@ -1,8 +1,9 @@
-import themeit from "theme-it";
+import Themeit from "theme-it";
 
 const testProperty = "test";
 const testVariable = `--${testProperty}`;
 let containerNode;
+const themeit = new Themeit();
 
 describe("Themeit API tests", () => {
 
