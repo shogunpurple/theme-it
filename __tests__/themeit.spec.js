@@ -1,8 +1,9 @@
-import themeit from "theme-it";
+import Themeit from "theme-it";
 
 const testProperty = "test";
 const testVariable = `--${testProperty}`;
 let containerNode;
+const themeit = new Themeit();
 
 describe("Themeit API tests", () => {
 
@@ -17,7 +18,7 @@ describe("Themeit API tests", () => {
   });
 
   it("Should print a warning message when the returned property is empty", () => {
-    const actual = themeit.get(testProperty);
+    const actual = themeit.getProperty(testProperty);
     expect(actual).toEqual("");
   });
 
@@ -26,13 +27,13 @@ describe("Themeit API tests", () => {
   it.skip("Should return the correct CSS custom property on an element using getThemeProperty when it exists", () => {
     containerNode.style.setProperty(testVariable, "red");
 
-    const actual = themeit.get(testProperty, containerNode);
+    const actual = themeit.getProperty(testProperty, containerNode);
 
     expect(actual).toEqual("red");
   });
 
   it.skip("Should set a CSS Custom property on an element using setThemeProperty", () => {
-    themeit.set(testProperty, "red");
+    themeit.setProperty(testProperty, "red");
 
     const actual = getComputedStyle(containerNode).getPropertyValue(testVariable);
 
@@ -42,7 +43,7 @@ describe("Themeit API tests", () => {
   it.skip("Should remove a CSS Custom property from an element using removeThemeProperty", () => {
     containerNode.style.setProperty(testVariable, "red");
 
-    const removed = themeit.remove(testProperty, containerNode);
+    const removed = themeit.removeProperty(testProperty, containerNode);
     const actual = getComputedStyle(containerNode).getPropertyValue(testVariable);
 
     expect(removed).toEqual("red");

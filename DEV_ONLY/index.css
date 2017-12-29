@@ -5,13 +5,47 @@
   --navbar-font-family: "Goudy Bookletter 1911", sans-serif;
 
   --main-content-bg-color: lightgrey;
-  --main-content-color: black;
+  --main-content-color: palevioletred;
   --main-content-p-font: "Goudy Bookletter 1911", sans-serif;
   --main-content-margin: 100px;
   --main-content-text-layout: justify;
 
   --grid-area-title-color: red;
   --grid-section-p-color: grey;
+  --grid-section-bg-color: white;
+}
+
+.dark-theme {
+  --navbar-bg-color: darkgray;
+  --navbar-a-color: ;
+  --navbar-a-hover-color: darkblue;
+  --navbar-font-family: "Goudy Bookletter 1911", sans-serif;
+
+  --main-content-bg-color: lightgrey;
+  --main-content-color: black;
+  --main-content-p-font: "Goudy Bookletter 1911", sans-serif;
+  --main-content-margin: 100px;
+  --main-content-text-layout: justify;
+
+  --grid-area-title-color: darkred;
+  --grid-section-p-color: darkred;
+  --grid-section-bg-color: #ccc;
+}
+
+.light-theme {
+  --navbar-bg-color: lightblue;
+  --navbar-a-color: white;
+  --navbar-a-hover-color: lightgray;
+  --navbar-font-family: "Goudy Bookletter 1911", sans-serif;
+
+  --main-content-bg-color: skyblue;
+  --main-content-color: #ccc;
+  --main-content-p-font: "Goudy Bookletter 1911", sans-serif;
+  --main-content-margin: 100px;
+  --main-content-text-layout: justify;
+
+  --grid-area-title-color: magenta;
+  --grid-section-p-color: lightgray;
   --grid-section-bg-color: white;
 }
 
