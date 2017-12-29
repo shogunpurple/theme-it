@@ -1,8 +1,31 @@
+const DEFAULT_CONFIG = {
+  debug: false
+};
+
 class Themeit {
-  constructor() {}
+  constructor(config = DEFAULT_CONFIG) {
+    const {
+      debug,
+      onThemeChange,
+      onPropertySet,
+      onPropertyGet,
+      onPropertyRemove
+    } = config;
+
+    this.debug = debug;
+    this.onThemeChange = onThemeChange;
+    this.onPropertySet = onPropertySet;
+    this.onPropertyGet = onPropertyGet;
+    this.onPropertyRemove = onPropertyRemove;
+    this.loadThemes();
+  }
+
+  loadThemes() {
+    console.log("loading themes");
+  }
 
   validateResponse(response, property) {
-    if (!response) {
+    if (!response && this.debug) {
       console.warn(
         `Themeit: The CSS custom property --${property} is empty or has not been set.`
       );
@@ -14,7 +37,7 @@ class Themeit {
    */
   isSupported() {
     const isSupported = CSS.supports("--custom-properties", "custom");
-    if (!isSupported) {
+    if (!isSupported && this.debug) {
       console.warn("Your browser does not support custom CSS properties.");
     }
     return isSupported;
@@ -25,10 +48,10 @@ class Themeit {
    * @param {String} property - The property to get. Auto prefixed with --.
    * @param {DOMNode} element - DOM node to get CSS custom property from.
    */
-  get(property, element = document.body) {
+  getProperty(property, element = document.body) {
     const customPropertyValue = getComputedStyle(element).getPropertyValue(
       `--${property}`
-    );
+    ).trim();
 
     this.validateResponse(customPropertyValue, property);
 
@@ -41,7 +64,7 @@ class Themeit {
    * @param {String | Number} value - The value of the property
    * @param {DOMNode} element - element to set the property on.
    */
-  set(property, value, element = document.body) {
+  setProperty(property, value, element = document.body) {
     element.style.setProperty(`--${property}`, value);
   }
 
@@ -50,7 +73,7 @@ class Themeit {
    * @param {String} property - The name of the property to remove. This is auto-prefixed with --
    * @param {DOMNode} element - The element to remove the property from.
    */
-  remove(property, element = document.body) {
+  removeProperty(property, element = document.body) {
     const removed = element.style.removeProperty(`--${property}`);
     this.validateResponse(removed, property);
   }
