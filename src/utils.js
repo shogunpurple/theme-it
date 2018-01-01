@@ -1,4 +1,4 @@
-// Regex expressions
+// Regex constants
 const doubleQuoteRgx = /"/g;
 const commaRgx = /,/g;
 const rightParenSemicolonRgx = /};/g;

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Themeit API tests Should generate a new theme when a theme configuration is passed, which should inject the CSS into the <head> tag. 1`] = `
+"
+  .test {
+    --primary-color: blue
+  }
+"
+`;

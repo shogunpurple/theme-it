@@ -9,7 +9,7 @@ import {
 
 const formatOutput = output => JSON.stringify(output, null, 2);
 
-const parseNestedPrefix = (prefix) => prefix ? `${camelToKebab(prefix)}-` : "";
+const parseNestedPrefix = (prefix) => prefix ? `${prefix}-` : "";
 
 const isNested = value => typeof value === "object";
 
@@ -37,14 +37,12 @@ function objectToCssString(obj) {
 function traverse(themeObj, result, prefix) {
   for (let cssVariableName in themeObj) {
     const cssVariableValue = themeObj[cssVariableName];
+    const cssVariableKey = parseNestedPrefix(prefix) + cssVariableName;
 
-    let cssVariableKey;
     if (isNested(cssVariableValue)) {
-      cssVariableKey = camelToKebab(parseNestedPrefix(prefix) + cssVariableName);
       traverse(cssVariableValue, result, cssVariableKey);
     } else {
-      cssVariableKey = prefix ? `${prefix}-${camelToKebab(cssVariableName)}` : camelToKebab(cssVariableName);
-      result[`--${cssVariableKey}`] = cssVariableValue;
+      result[`--${camelToKebab(cssVariableKey)}`] = cssVariableValue;
     }
   }
 }
@@ -52,9 +50,8 @@ function traverse(themeObj, result, prefix) {
 /**
  * Generates the CSS variable theme by passing in your theme styles as an object. Calls traverse() to do the conversion. 
  * @param {Object} themeConfig - Nested or Flat Theme configuration object
- * @param {Boolean} printCSS - Whether or not to print a copy & paste CSS class definition so you can start using your new themes straight away.
  */
-const generateTheme = (themeConfig, printCSS = false) => {
+const generateTheme = (themeConfig) => {
   const generated = {};
   for (let themeName in themeConfig) {
     const themeClass = "." + camelToKebab(themeName);
@@ -63,11 +60,25 @@ const generateTheme = (themeConfig, printCSS = false) => {
     traverse(themeConfig[themeName], generated[themeClass]);
   }
 
-  if (!printCSS) {
-    console.log(objectToCssString(generated));
-  }
-
   return generated;
 };
 
-export { generateTheme };
+/**
+ * Generates a valid CSS definition as a string from the passed in theme configuration object.
+ * @param {Object} themeConfig - theme configuration object
+ * @param {Boolean} printCSS - print the generated CSS to the console for copy + paste or debugging.
+ */
+function generateCSSFromThemeObj(themeConfig, printCSS) {
+  const cssVariableTree = generateTheme(themeConfig); 
+  const cssRuleDefinition = objectToCssString(cssVariableTree);
+
+  if (printCSS) {
+    console.log(cssRuleDefinition);
+  }
+
+  return cssRuleDefinition;
+}
+
+
+
+export { generateTheme, generateCSSFromThemeObj };

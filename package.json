@@ -12,6 +12,7 @@
     "prepublish": "if in-publish; then npm run prepublish:compile; fi",
     "prepublish:compile": "npm run clean && npm run transpile && npm run build:minified",
     "test": "jest --ci --colors --verbose -c=jest.config.json -b",
+    "test:update": "jest --colors --ci --verbose --watch -b -u -c=jest.config.json",
     "test:watch": "jest --colors --ci --verbose --watch -b -c=jest.config.json",
     "transpile": "babel src --out-dir lib --copy-files"
   },

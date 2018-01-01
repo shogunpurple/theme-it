@@ -1,4 +1,4 @@
-import { generateTheme } from "theme-it-cli";
+import { generateTheme } from "themeCompiler";
 import {
   testThemeConfig,
   generatedTheme,
