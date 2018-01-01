@@ -1,9 +1,33 @@
 import Themeit from "theme-it";
 
 const testProperty = "test";
+const testTheme = "test-theme";
 const testVariable = `--${testProperty}`;
+const testThemeConfig = {
+  test: {
+    "primary-color": "blue"
+  }
+};
 let containerNode;
-const themeit = new Themeit();
+
+// callbacks
+const onPropertyGet = jest.fn();
+const onPropertySet = jest.fn();
+const onPropertyRemove = jest.fn();
+const onThemesCreate = jest.fn();
+const onThemeApply = jest.fn();
+const onThemeUnapply = jest.fn();
+
+const themeit = new Themeit({
+  debug: true,
+  onPropertyGet,
+  onPropertySet,
+  onPropertyRemove,
+  onThemesCreate,
+  onThemeApply,
+  onThemeUnapply,
+  themeClasses: [testTheme]
+});
 
 describe("Themeit API tests", () => {
 
@@ -20,6 +44,42 @@ describe("Themeit API tests", () => {
   it("Should print a warning message when the returned property is empty", () => {
     const actual = themeit.getProperty(testProperty);
     expect(actual).toEqual("");
+  });
+
+  it("Should generate a new theme when a theme configuration is passed, which should inject the CSS into the <head> tag.", () => {
+    themeit.createThemes(testThemeConfig);
+    expect(document.head.childNodes[0].textContent).toMatchSnapshot();
+  });
+
+  it("Should execute the onPropertySet callback when a property is set", () => {
+    themeit.setProperty(testProperty, "red");
+    expect(onPropertySet).toHaveBeenCalledWith(testProperty, "red", expect.any(Node));
+  });
+
+  it("Should execute the onPropertyGet callback when a property is retrieved", () => {
+    themeit.getProperty(testProperty);
+    expect(onPropertyGet).toHaveBeenCalledWith(testProperty, expect.anything(), expect.any(Node));
+  });
+
+  it("Should execute the onPropertyRemove callback when a property is removed", () => {
+    const actual = themeit.removeProperty(testProperty);
+    expect(onPropertyRemove).toHaveBeenCalledWith(testProperty, "", expect.any(Node));
+  });
+
+  // TODO: improve test to use tohaveBeenCalledWith
+  it("Should execute the onThemeCreate callback when a theme is created", () => {
+    const actual = themeit.createThemes({});
+    expect(onThemesCreate).toHaveBeenCalled();
+  });
+
+  it("Should execute the onThemeApply callback when a theme is applied", () => {
+    const actual = themeit.applyTheme(testTheme);
+    expect(onThemeApply).toHaveBeenCalledWith(testTheme, expect.any(Node));
+  });
+
+  it("Should execute the onThemeUnapply callback when a theme is unapplied", () => {
+    const actual = themeit.unapplyTheme(testTheme);
+    expect(onThemeUnapply).toHaveBeenCalledWith(testTheme, expect.any(Node));
   });
 
   // CSS Variables are not yet supported by JSDOM - https://github.com/tmpvar/jsdom/issues/1895

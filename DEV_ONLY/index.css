@@ -1,56 +1,24 @@
 :root {
-  --navbar-bg-color: blue;
-  --navbar-a-color: white;
-  --navbar-a-hover-color: lightblue;
+  --primary-color: blue;  
+  --secondary-color: purple;
+  --tertiary-color: yellow;
   --navbar-font-family: "Goudy Bookletter 1911", sans-serif;
-
-  --main-content-bg-color: lightgrey;
-  --main-content-color: palevioletred;
-  --main-content-p-font: "Goudy Bookletter 1911", sans-serif;
-  --main-content-margin: 100px;
-  --main-content-text-layout: justify;
-
-  --grid-area-title-color: red;
-  --grid-section-p-color: grey;
-  --grid-section-bg-color: white;
 }
 
 .dark-theme {
-  --navbar-bg-color: darkgray;
-  --navbar-a-color: ;
-  --navbar-a-hover-color: darkblue;
-  --navbar-font-family: "Goudy Bookletter 1911", sans-serif;
-
-  --main-content-bg-color: lightgrey;
-  --main-content-color: black;
-  --main-content-p-font: "Goudy Bookletter 1911", sans-serif;
-  --main-content-margin: 100px;
-  --main-content-text-layout: justify;
-
-  --grid-area-title-color: darkred;
-  --grid-section-p-color: darkred;
-  --grid-section-bg-color: #ccc;
+  --primary-color: darkgreen;  
+  --secondary-color: #181717;
+  --tertiary-color: #3104fd;
 }
 
 .light-theme {
-  --navbar-bg-color: lightblue;
-  --navbar-a-color: white;
-  --navbar-a-hover-color: lightgray;
-  --navbar-font-family: "Goudy Bookletter 1911", sans-serif;
-
-  --main-content-bg-color: skyblue;
-  --main-content-color: #ccc;
-  --main-content-p-font: "Goudy Bookletter 1911", sans-serif;
-  --main-content-margin: 100px;
-  --main-content-text-layout: justify;
-
-  --grid-area-title-color: magenta;
-  --grid-section-p-color: lightgray;
-  --grid-section-bg-color: white;
+  --primary-color: skyblue;  
+  --secondary-color: palevioletred;
+  --tertiary-color: lightyellow;
 }
 
 .navbar {
-    background-color: var(--navbar-bg-color);
+    background-color: var(--primary-color);
     height: 60px;
     margin-bottom: 0px;
 }
@@ -75,40 +43,40 @@
 }
 
 .navbar li a:hover {
-    color: var(--navbar-a-hover-color);
+    color: var(--tertiary-color);
 }
 
 .main-content-area {
-    background-color: var(--main-content-bg-color);
+    background-color: var(--primary-color);
     text-align: center;
 }
 
 .main-content-area h1 {
-    color: var(--main-content-color);
+    color: var(--primary-color);
     padding-top: 30px;
 }
 
 .main-content-area p {
-    font-family: var(--main-content-p-font);
-    color: var(--main-content-color);
+    font-family: var(--navbar-font-family);
+    color: var(--secondary-color);
     padding-bottom: 20px;
-    margin-left: var(--main-content-margin);
-    margin-right: var(--main-content-margin);
-    text-align: var(--main-content-text-layout);
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
 }
 
 .grid-area h2 {
-    color: var(--grid-area-title-color);
+    color: var(--secondary-color);
     text-align: left;
 }
 
 .grid-section {
     display: inline-flex;
-    background-color: var(--grid-section-bg-color);
+    background-color: var(--tertiary-color);
 }
 
 .grid-section p {
- color: var(--grid-section-p-color);
+ color: var(--secondary-color);
 }
 
 .grid-unit {
