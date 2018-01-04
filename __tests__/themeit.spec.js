@@ -85,6 +85,7 @@ describe("Themeit API tests", () => {
     expect(onThemeUnapply).toHaveBeenCalledWith(testTheme, expect.any(Node));
   });
 
+
   // CSS Variables are not yet supported by JSDOM - https://github.com/tmpvar/jsdom/issues/1895
   // Skipping these tests until the issue is resolved.
   it.skip("Should return the correct CSS custom property on an element using getThemeProperty when it exists", () => {
