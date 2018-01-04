@@ -1,4 +1,5 @@
 import { generateTheme, generateCSSFromThemeObj } from "./themeCompiler";
+import { camelToKebab } from "./utils";
 
 const ROOT_SELECTOR = "body";
 
@@ -52,7 +53,7 @@ class Themeit {
    * @param {Object} themeConfig - Theme configuration object
    */
   createThemes(themeConfig) {
-    const themeNames = Object.keys(themeConfig);
+    const themeNames = Object.keys(themeConfig).map(camelToKebab);
 
     const themeExists = this.themeClasses.some(themeClass =>
       themeNames.includes(themeClass)
@@ -74,7 +75,7 @@ class Themeit {
 
     this.themeClasses.push(...themeNames);
 
-    this.executeCallback(this.onThemesCreate, generatedThemeCSS);
+    this.executeCallback(this.onThemesCreate, themeNames, generatedThemeCSS);
 
     if (this.debug) {
       console.log(`New themes generated: ${themeNames}`, themeConfig, generatedThemeCSS);

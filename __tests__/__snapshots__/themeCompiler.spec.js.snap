@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Themeit theme compiler tests Should generate the correct valid CSS when when the nestedThemeConfig is passed in 1`] = `
+"
+  .dark-theme {
+    --primary-color: black;
+    --secondary-color: papayawhip;
+    --global-border: 2px;
+    --button-primary-color: blue;
+    --input-secondary-color: papayawhip;
+    --input-radio-color: purple;
+    --input-text-border: 5px
+  }
+  .light-theme {
+    --primary-color: gray;
+    --secondary-color: purple;
+    --global-border: 2px;
+    --button-primary-color: blue;
+    --input-secondary-color: papayawhip;
+    --input-radio-color: purple;
+    --input-text-border: 5px
+  }
+"
+`;
+
+exports[`Themeit theme compiler tests Should generate the correct valid CSS when when the themeConfig is passed in 1`] = `
+"
+  .dark-theme {
+    --primary-color: black;
+    --secondary-color: papayawhip;
+    --global-border: 2px
+  }
+  .light-theme {
+    --primary-color: gray;
+    --secondary-color: purple;
+    --global-border: 2px
+  }
+"
+`;

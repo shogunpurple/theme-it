@@ -1,0 +1,34 @@
+{
+  "projectName": "theme-it",
+  "projectOwner": "mmckeaveney",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "mmckeaveney",
+      "name": "Martin McKeaveney",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/11256663?s=400&u=55b64769a088cd1b32efd26238521eb449520f99&v=4",
+      "profile": "https://github.com/mmckeaveney",
+      "contributions": [
+        "code",
+        "doc",
+        "example",
+        "ideas",
+        "test"
+      ]
+    },
+    {
+      "login": "victoriasloan",
+      "name": "victoriasloan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/9913651?v=4",
+      "profile": "https://github.com/victoriasloan",
+      "contributions": [
+        "code",
+        "example"
+      ]
+    }
+  ]
+}

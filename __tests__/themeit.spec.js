@@ -66,10 +66,13 @@ describe("Themeit API tests", () => {
     expect(onPropertyRemove).toHaveBeenCalledWith(testProperty, "", expect.any(Node));
   });
 
-  // TODO: improve test to use tohaveBeenCalledWith
   it("Should execute the onThemeCreate callback when a theme is created", () => {
-    const actual = themeit.createThemes({});
-    expect(onThemesCreate).toHaveBeenCalled();
+    themeit.createThemes({
+      newTheme: {
+        primaryColor: "blue"
+      }
+    });
+    expect(onThemesCreate).toHaveBeenCalledWith(["new-theme"], expect.anything());
   });
 
   it("Should execute the onThemeApply callback when a theme is applied", () => {
@@ -81,6 +84,7 @@ describe("Themeit API tests", () => {
     const actual = themeit.unapplyTheme(testTheme);
     expect(onThemeUnapply).toHaveBeenCalledWith(testTheme, expect.any(Node));
   });
+
 
   // CSS Variables are not yet supported by JSDOM - https://github.com/tmpvar/jsdom/issues/1895
   // Skipping these tests until the issue is resolved.

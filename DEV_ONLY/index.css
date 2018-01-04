@@ -83,3 +83,41 @@
     text-align: center;
 }
 
+.theme-it-controls {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+}
+
+.selector {
+    width: 700px;
+    height: 50px;
+    box-shadow: 0.5px 0.5px 0.5px #ccc;
+    font-size: 20px;
+}
+
+
+.color-chooser {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    align-items: center;
+}
+
+.color-chooser input {
+    margin-left: 10px;
+}
+
+.theme-it-controls button {
+    width: 100px
+}
+
+.create-theme {
+    padding: 20px;
+}
+
+.current-themes button {
+    margin: 10px;
+}
