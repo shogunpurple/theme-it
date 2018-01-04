@@ -1,0 +1,9 @@
+__tests__/
+coverage/
+tmp/
+.travis.yml
+badge.png
+badge.svg
+CONTRIBUTING.md
+README.md
+DEV_ONLY/
