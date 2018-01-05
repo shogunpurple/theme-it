@@ -1,6 +1,6 @@
 {
   "name": "theme-it",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/theme-it.js",
   "bin": {
     "theme-it": "lib/cli.js"
@@ -20,7 +20,8 @@
     "transpile": "babel src --out-dir lib --copy-files",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
-    "contributors:check": "all-contributors check"
+    "contributors:check": "all-contributors check",
+    "test:one": "theme-it foo.json foo.css"
   },
   "devDependencies": {
     "all-contributors-cli": "^4.10.1",
@@ -32,6 +33,6 @@
     "parcel-bundler": "^1.3.0"
   },
   "dependencies": {
-    "theme-it": "^1.0.0"
+    "theme-it": "^1.0.1"
   }
 }
