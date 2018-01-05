@@ -17,7 +17,8 @@
     "test:watch": "jest --colors --ci --verbose --watch -b -c=jest.config.json",
     "transpile": "babel src --out-dir lib --copy-files",
     "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate"
+    "contributors:generate": "all-contributors generate",
+    "contributors:check": "all-contributors check",
   },
   "devDependencies": {
     "all-contributors-cli": "^4.10.1",
