@@ -1,4 +1,4 @@
-import Themeit from "theme-it";
+import Themeit from "../src/theme-it";
 
 const themeit = new Themeit({
   debug: true,
