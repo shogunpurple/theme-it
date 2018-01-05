@@ -1,5 +1,9 @@
-# theme-it  
+# theme-it :wrench: :rainbow: 
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+[![npm](https://img.shields.io/npm/v/clinews.svg)](https://www.npmjs.com/package/clinews)
+[![license](https://img.shields.io/github/license/mmckeaveney/clinews.svg)](https://github.com/mmckeaveney/clinews/blob/master/LICENSE)
+
+
 A small (7kb minified), blazing fast theming library powered by CSS custom properties (also known as CSS4 Variables) with absolutely zero dependencies.
 
 - [theme-it](#theme-it)
@@ -26,6 +30,7 @@ A small (7kb minified), blazing fast theming library powered by CSS custom prope
     - [Command Line Interface](#command-line-interface)
     - [Development](#development)
     - [Known Issues](#known-issues)
+    - [Contributors](#contributors)
 
 ## Rationale
 Variables are one of the reasons [CSS preprocessors](https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor) ([SASS](http://sass-lang.com/), [LESS](http://lesscss.org/)) exist at all. The limitation here is that preprocessors provide variable functionality at **compile time**. This means you cannot access these variables at runtime when you compile code from your chosen preprocessor into CSS. This poses a problem that many developers solve by bundling a different stylesheet for every theme and switching between them with JavaScript. 
