@@ -1,6 +1,6 @@
 # theme-it :wrench: :rainbow: 
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
-[![npm](https://img.shields.io/npm/v/clinews.svg)](https://www.npmjs.com/package/theme-it)
+[![npm](https://img.shields.io/npm/v/theme-it.svg)](https://www.npmjs.com/package/theme-it)
 [![license](https://img.shields.io/github/license/mmckeaveney/theme-it.svg)](https://github.com/mmckeaveney/theme-it/blob/master/LICENSE)
 
 
