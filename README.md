@@ -63,15 +63,15 @@ The following is a simple example of a theme you can create in one of your CSS f
 
 ```css 
 .dark-theme {
-    --primary-color: "black";
-    --secondary-color: "darkblue";
-    --tertiary-color: "darkgreen";
+    --primary-color: black;
+    --secondary-color: darkblue;
+    --tertiary-color: darkgreen;
 }
 
 .light-theme {
-    --primary-color: "white";
-    --secondary-color: "skyblue";
-    --tertiary-color: "green";
+    --primary-color: white;
+    --secondary-color: skyblue;
+    --tertiary-color: green;
 }
 ```
 
