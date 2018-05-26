@@ -15,7 +15,7 @@ A small (7kb minified), blazing fast theming library powered by CSS custom prope
         - [Perform a callback when you execute a theme-it operation](#perform-a-callback-when-you-execute-a-theme-it-operation)
     - [Advanced Usage](#advanced-usage)
         - [Create a completely new theme at runtime, and apply it](#create-a-completely-new-theme-at-runtime-and-apply-it)
-    - [Example](#examples)
+    - [Examples](#examples)
         - [Vue](#vue)
     - [API](#api)
         - [The Themeit object](#the-themeit-object)
