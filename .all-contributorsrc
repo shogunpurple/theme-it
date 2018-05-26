@@ -29,6 +29,16 @@
         "code",
         "example"
       ]
+    },
+    {
+      "login": "johman10",
+      "name": "Johan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/5371454?v=4",
+      "profile": "https://github.com/johman10",
+      "contributions": [
+        "code"
+      ]
     }
-  ]
+  ],
+  "repoType": "github"
 }
