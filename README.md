@@ -16,7 +16,6 @@ A small (7kb minified), blazing fast theming library powered by CSS custom prope
     - [Advanced Usage](#advanced-usage)
         - [Create a completely new theme at runtime, and apply it](#create-a-completely-new-theme-at-runtime-and-apply-it)
     - [Examples](#examples)
-        - [Vue](#vue)
     - [API](#api)
         - [The Themeit object](#the-themeit-object)
         - [Configuration options](#configuration-options)
@@ -297,11 +296,9 @@ themeit.applyTheme("nested-light-theme");
 ```
 
 ## Examples
-As a way of show casing the power of themeit we created some examples in different frameworks.
-The examples are just as a showcase. Themeit doesn't, in any way, depend or the frameworks below.
-
-### Vue
-A basic Vue example of Theme It can be found here: https://codesandbox.io/s/zz2on366jl?view=preview
+As a way of show casing the power of Themeit we created some examples in different frameworks.
+The examples are just a showcase. Themeit doesn't, in any way, depend on the frameworks listed below.
+ - [Vue](https://codesandbox.io/s/zz2on366jl?view=preview)
 
 ## API
 
