@@ -4,7 +4,7 @@
 [![license](https://img.shields.io/github/license/mmckeaveney/theme-it.svg)](https://github.com/mmckeaveney/theme-it/blob/master/LICENSE)
 
 
-A small (5.5kb minified), blazing fast theming library powered by CSS custom properties (also known as CSS4 Variables) with absolutely zero dependencies.
+A small (4.9kb minified), blazing fast theming library powered by CSS custom properties (also known as CSS4 Variables) with absolutely zero dependencies.
 
 - [theme-it](#theme-it)
     - [Rationale](#rationale)
