@@ -1,6 +1,6 @@
 {
   "name": "theme-it",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/theme-it.js",
   "module": "es/theme-it.js",
   "bin": {
