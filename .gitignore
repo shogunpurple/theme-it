@@ -58,6 +58,7 @@ typings/
 
 # Compiled/Auto Generated files
 dist/
+es/
 lib/
 .cache
 
